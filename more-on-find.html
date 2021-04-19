@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Find - Array Helper Method</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Car(model) {
+        this.model = model;
+      }
+
+      var cars = [
+        new Car('Buick'),
+        new Car('Camaro'),
+        new Car('Focus')
+      ];
+
+      cars.find(function(car) {
+        return car.model === 'Focus';
+      });
+    </script>
+  </body>
+</html>
