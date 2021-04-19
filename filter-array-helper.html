@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Filter - Array Helper Method</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var products = [
+        { name: 'cucumber', type: 'vegetable' },
+        { name: 'banana', type: 'fruit' },
+        { name: 'celery', type: 'vegetable' },
+        { name: 'orange', type: 'fruit' }
+      ];
+
+      var filteredProducts = [];
+
+      for (var i = 0; i < products.length; i++) {
+      	if (products[i].type === 'fruit')
+          filteredProducts.push(products[i]);
+      }
+
+      filteredProducts;
+    </script>
+  </body>
+</html>
