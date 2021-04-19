@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Processing values using 'forEach'
+      var images = [
+        { height: 10, width: 30 },
+        { height: 20, width: 90 },
+        { height: 54, width: 32 }
+      ];
+      var areas = [];
+
+      // Loop through the images array
+      images.forEach(function(image) {
+      	areas.push(image.height * image.width); // push each image object's area to the 'areas' array
+      });
+
+      // Print the 'areas' array
+      areas;
+    </script>
+  </body>
+</html>
