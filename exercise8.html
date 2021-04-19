@@ -6,7 +6,20 @@
   </head>
   <body>
     <script type="text/javascript">
-      // What to implement is a little vague - not very clear
+      var numbers = [10, 20, 30];
+
+      function reject(numbers, iteratorFunction) {
+      	return numbers.filter(function(number) {
+        	return !iteratorFunction(number);
+        });
+      }
+
+      // If function returns 'true' then the value should get rejected and should not get pushed on to the new array
+      var lessThanFifteen = reject(numbers, function(number) {
+      	return number > 15;
+      });
+
+      lessThanFifteen;
     </script>
   </body>
 </html>
