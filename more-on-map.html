@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Map - Array Helper Method</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var cars = [
+        { model: 'Buick', price: 'CHEAP' },
+        { model: 'Camaro', price: 'expensive' }
+      ];
+
+      // Plucking (extracting) the 'prices' out of the 'cars' array of 'car' objects
+      var prices = cars.map(function(car) {
+      	return car.price;
+      });
+
+      prices;
+    </script>
+  </body>
+</html>
