@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Reduce - Array Helper Method</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var primaryColors = [
+        { color: 'red' },
+        { color: 'yellow' },
+        { color: 'blue' }
+      ];
+
+      // Extracting 'color' from the array to output array of color strings ["red", "yellow", "blue"]
+      primaryColors.reduce(function(previous, primaryColor) {
+        previous.push(primaryColor.color);
+
+        return previous;
+      }, []);
+    </script>
+  </body>
+</html>
