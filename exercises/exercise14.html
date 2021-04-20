@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 14</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var trips = [{ distance: 34 }, { distance: 12 } , { distance: 1 }];
+
+      // Find the total distance travelled
+      var totalDistance = trips.reduce(function(sum, trip) {
+          return sum + trip.distance;
+      }, 0);
+
+      totalDistance;
+    </script>
+  </body>
+</html>
