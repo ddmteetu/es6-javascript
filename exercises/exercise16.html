@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 16</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var numbers = [1, 1, 2, 3, 4, 4];
+
+      // function to remove the duplicates
+      function unique(array) {
+        return array.reduce(function(previous, element) {
+          // check if the 'element' is present in the 'previous' array
+          var foundNumber = previous.find(function(number) {
+            return number === element;
+          });
+
+          // if 'element' is not found then push it to the 'previous' array
+          if (foundNumber === undefined) {
+          	previous.push(element);
+          }
+
+          return previous;
+        }, []);
+      }
+
+      unique(numbers);
+    </script>
+  </body>
+</html>
