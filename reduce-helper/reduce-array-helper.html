@@ -13,6 +13,13 @@
       for (var i = 0; i < numbers.length; i++) {
       	sum += numbers[i];
       }
+
+      "----"
+
+      // Using 'reduce' array helper method to find the sum of numbers
+      numbers.reduce(function(sum, number) {
+      	return sum + number;
+      }, 0);
     </script>
   </body>
 </html>
