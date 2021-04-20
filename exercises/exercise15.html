@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 15</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var desks = [
+        { type: 'sitting' },
+        { type: 'standing' },
+        { type: 'sitting' },
+        { type: 'sitting' },
+        { type: 'standing' }
+      ];
+
+      // Using 'reduce' to output an object with count for each desk type
+      var deskTypes = desks.reduce(function(previous, desk) {
+          desk.type === 'sitting' ? previous.sitting++ : previous.standing++;
+
+          return previous;
+      }, { sitting: 0, standing: 0 });
+
+      deskTypes;
+    </script>
+  </body>
+</html>
