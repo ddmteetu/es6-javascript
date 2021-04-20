@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 12</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var users = [
+        { id: 21, hasSubmitted: true },
+        { id: 62, hasSubmitted: false },
+        { id: 4, hasSubmitted: true }
+      ];
+
+      // Finding if 'all' users have submitted a request form
+      var hasSubmitted = users.every(function(user) {
+          return user.hasSubmitted;
+      });
+
+      hasSubmitted;
+    </script>
+  </body>
+</html>
