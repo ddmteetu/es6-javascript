@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 11</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var ladders = [
+        { id: 1, height: 20 },
+        { id: 3, height: 25 }
+      ];
+
+      // findWhere(ladders, { height: 25 }); // result { id: 3, height: 25 }
+
+      function findWhere(array, criteria) {
+        var property = Object.keys(criteria);
+      	return array.find(function(element) {
+        	return element[property] === criteria[property];
+        });
+      }
+
+      // Custom 'findWhere' to find the ladder with height of 25
+      findWhere(ladders, { height: 25 });
+    </script>
+  </body>
+</html>
