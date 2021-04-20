@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 13</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var requests = [
+        { url: '/photos', status: 'complete' },
+        { url: '/albums', status: 'pending' },
+        { url: '/users', status: 'failed' }
+      ];
+
+      // Finding if there are 'some' requests with status of 'pending'
+      var inProgress = requests.some(function(request) {
+          return request.status === 'pending';
+      });
+
+      inProgress;
+    </script>
+  </body>
+</html>
