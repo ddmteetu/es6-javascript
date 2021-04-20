@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Every - Array Helper Method</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Field(value) {
+        this.value = value;
+      }
+
+      // Adding a 'validate' function to check if user entered something
+      Field.prototype.validate = function() {
+        return this.value.length > 0;
+      }
+
+      // Field values are assumed to be coming from actual html input's
+      var username = new Field("2cool");
+      var password = new Field("my_password");
+      var birthdate = new Field("10/10/2010");
+
+      var formIsValid = username.validate() && password.validate() && birthdate.validate();
+
+      if (formIsValid) {
+        // allow user to submit!
+      } else {
+        // show an error message
+      }
+    </script>
+  </body>
+</html>
