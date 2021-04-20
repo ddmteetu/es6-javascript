@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Balanced Parenthesis Problem - Solved using Reduce</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // If parenthesis are balanced then 0 (TRUE) will be returned. If "(" are more then +ve (FALSE) number will be returned & if ")" are more then a -ve (FALSE) number will be returned
+      function balancedParens(string) {
+        return !string.split("").reduce(function(previous, char) { // Using 'negation' (!) for returned value, turns returned numbers into booleans (TRUE | FALSE)
+          if (previous < 0) { return previous; } // if the input string starts with ")" then don't do anything just return the 'previous'
+          if (char === "(") { return ++previous; } // if "(" is found then increment 'previous' by +1
+          if (char === ")") { return --previous; } // if ")" is found then decrement 'previous' by -1
+          return previous; // if neither of "(" OR ")" is found then don't do anything just return the 'previous'
+        }, 0);
+      }
+
+      balancedParens("((((()))))");
+    </script>
+  </body>
+</html>
