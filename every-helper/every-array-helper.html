@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Every - Array Helper Method</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var computers = [
+        { name: 'Apple', ram: 24 },
+        { name: 'Compaq', ram: 4 },
+        { name: 'Acer', ram: 32 }
+      ];
+
+      var allComputersCanRunProgram = true;
+      var onlySomeComputersCanRunProgram = false;
+
+      // Logic to find if 'all' or 'some' computers can run a program that requires at least '16GB' of RAM
+      for (var i = 0; i < computers.length; i++) {
+      	var computer = computers[i];
+
+        if (computer.ram < 16) {
+        	allComputersCanRunProgram = false;
+        } else {
+        	onlySomeComputersCanRunProgram = true;
+        }
+      }
+
+      "-----"
+
+      allComputersCanRunProgram;
+      onlySomeComputersCanRunProgram;
+    </script>
+  </body>
+</html>
