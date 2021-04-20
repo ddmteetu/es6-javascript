@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 9</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var users = [
+        { id: 1, admin: false },
+        { id: 2, admin: false },
+        { id: 3, admin: true }
+      ];
+
+      // Finding user who is admin
+      var admin = users.find(function(user) {
+          return user.admin;
+      });
+
+      admin;
+    </script>
+  </body>
+</html>
