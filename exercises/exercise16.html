@@ -11,15 +11,10 @@
       // function to remove the duplicates
       function unique(array) {
         return array.reduce(function(previous, element) {
-          // check if the 'element' is present in the 'previous' array
-          var foundNumber = previous.find(function(number) {
+          // check if the 'element' is present in the 'previous' array, if found then do nothing else push the 'element' to the 'previous' array
+          previous.find(function(number) {
             return number === element;
-          });
-
-          // if 'element' is not found then push it to the 'previous' array
-          if (foundNumber === undefined) {
-          	previous.push(element);
-          }
+          }) ? previous : previous.push(element);
 
           return previous;
         }, []);
