@@ -30,6 +30,13 @@
 
       allComputersCanRunProgram;
       onlySomeComputersCanRunProgram;
+
+      "++++"
+
+      // 'some' helper to know if 'some' computers can run a program
+      computers.some(function(computer) {
+      	return computer.ram > 16;
+      });
     </script>
   </body>
 </html>
