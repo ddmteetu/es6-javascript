@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rest and Spread Operators</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function validateShoppingList(...items) { // using 'Rest' operator as the items to be purchased are not fixed, there could be any number of items
+        if (items.indexOf('milk') < 0) {
+          return [ 'milk', ...items ]; // using 'Spread' operator to add 'milk' to the purchased items list
+        }
+
+        return items;
+      }
+
+      validateShoppingList('oranges', 'bread', 'butter'); // OUTPUT: ['milk', 'oranges', 'bread', 'butter'];
+    </script>
+  </body>
+</html>
