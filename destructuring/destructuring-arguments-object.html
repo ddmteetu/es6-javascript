@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Destructuring Arguments Object</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var savedFile = {
+        extension: 'jpeg',
+        name: 'repost',
+        size: 14040
+      };
+
+      // ES5 way
+      // function fileSummary(file) {
+      //   return `The file ${file.name}.${file.extension} is of size ${file.size}`;
+      // }
+
+      // ES6 Destructuring
+      function fileSummary({ name, extension, size }, { color }) {
+        return `${color} The file ${name}.${extension} is of size ${size}`;
+      }
+
+      fileSummary(savedFile, { color: 'red' });
+    </script>
+  </body>
+</html>
