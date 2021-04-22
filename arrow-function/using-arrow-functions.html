@@ -10,9 +10,11 @@
         members: ['Jane', 'Bill'],
         teamName: 'Super Squad',
         teamSummary: function() {
+          var self = this;
+
           return this.members.map(function(member) {
-            return `${member} is on team ${this.teamName}`;
-          }.bind(this));
+            return `${member} is on team ${self.teamName}`;
+          });
         }
       }
 
