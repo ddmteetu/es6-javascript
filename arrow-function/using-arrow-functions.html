@@ -12,7 +12,7 @@
         teamSummary: function() {
           return this.members.map(function(member) {
             return `${member} is on team ${this.teamName}`;
-          });
+          }.bind(this));
         }
       }
 
