@@ -8,8 +8,10 @@
     <script type="text/javascript">
       // MathLibrary Object to be deployed as 'Open Source' code on 'github' for others to use
       const MathLibrary = {
-        calculateProduct(a, b) { // most people complaint about the method name, they want it to be 'multiply' instead
-          return a * b;
+        calculateProduct(...rest) { // most people complaint about the method name, they want it to be 'multiply' instead
+          console.log('Please use the multiply method instead');
+          return this.multiply(...rest); // to remove the repetition from the library, we used 'Rest' -> calculateProduct(...rest), to collect all the passed arguments into an 'array'
+          // then a call to 'multiply' method is made and the passed arguments got spreaded using 'Spread' -> this.multiply(...rest)
         },
         multiply(a, b) {
           return a * b;
