@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Use Case of Defaulting Arguments</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function User(id) { // to create a User Object with id property
+        this.id = id;
+      }
+
+      function generateId() { // to generate a 'random' id for every User
+        return Math.random() * 99999;
+      }
+
+      // by passing 'new User(generateId())' as a default argument value to the User
+      // we're making 'createAdminUser()' capable of creating 'Admin' users from 'new users' or
+      // making an 'existing' user to be promoted to 'Admin'
+      function createAdminUser(user = new User(generateId())) { // to make a user equipped with 'Admin' role
+        user.admin = true;
+
+        return user;
+      }
+
+      const user2 = new User(generateId());
+      createAdminUser(); // to create an 'Admin' user we'll have to pass 'user' to the function call, if nothing is passed then 'new user' will be created
+      createAdminUser(user2); // existing user 'user2' will be promoted to 'Admin'
+    </script>
+  </body>
+</html>
