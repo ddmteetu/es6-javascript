@@ -8,7 +8,7 @@
     <script type="text/javascript">
       function createBookShop(inventory) {
         return {
-          inventory: inventory,
+          inventory,
           inventoryValue: function() {
             return this.inventory.reduce((total, book) => total + book.price, 0);
           },
