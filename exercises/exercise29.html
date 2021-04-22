@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 29</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function product(...numbers) { // using 'Rest' operator to form an array out of passed arguments
+        return numbers.reduce((acc, number) => {
+          return acc * number;
+        }, 1);
+      }
+
+      product(2, 3, 4, 5);
+    </script>
+  </body>
+</html>
