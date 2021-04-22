@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Default Function Arguments</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function makeAjaxRequest(url, method = 'GET') {
+        // logic to make the request
+        return method;
+      }
+
+      makeAjaxRequest('google.com'); // OUTPUT: 'GET'
+      makeAjaxRequest('google.com', 'POST'); // OUTPUT: 'POST'
+      makeAjaxRequest('google.com', null); // Function call doesn't return anything
+      makeAjaxRequest('google.com', undefined); // OUTPUT: 'GET'
+    </script>
+  </body>
+</html>
