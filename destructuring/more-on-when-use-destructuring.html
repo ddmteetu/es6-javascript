@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>When to use Destructuring</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // some API returned these set of points
+      const points = [
+        [4, 5],
+        [10, 1],
+        [0, 40]
+      ];
+
+      // a third party library is being used in the project to create a graph using 'x' and 'y' co-ordinates
+      // and the library needs a 'data structure' like below:
+      [
+        { x: 4, y: 5 },
+        { x: 10, y: 1 },
+        { x: 0, y: 40 }
+      ];
+
+      // now we need to transform the 'points' array (provided by the API) to a 'data structure' that is required by the library
+      // using array destructuring to transform the 'points' array to the required 'data structure'
+      points.map(([ x, y ]) => { // array destructuring to pass the arguments
+        return { x, y }; // using 'enhanced object literals' as the 'key' and 'value' have similar names
+      });
+
+      // OUTPUT: [{'x': 4, 'y': 5}, {'x': 10, 'y': 1}, {'x': 0, 'y': 40}]
+    </script>
+  </body>
+</html>
