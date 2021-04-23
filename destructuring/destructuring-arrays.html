@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Destructuring Arrays</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const companies = [
+        'Google',
+        'Facebook',
+        'Uber'
+      ];
+
+      const [ name, name2, name3 ] = companies; // Destructuring elements of the array 'companies', use []
+
+      name; // OUTPUT: Google
+      name2; // OUTPUT: Facebook
+      name3; // OUTPUT: Uber
+
+      const { length } = companies; // Destructuring 'length' property of the array 'companies', use {}
+
+      length; // OUTPUT: 3
+
+      const [ name, ...rest ] = companies; // Using 'Spread' operator in array destructuring
+
+      name; // OUTPUT: Google
+      rest; // OUTPUT: ['Facebook', 'Uber']
+    </script>
+  </body>
+</html>
