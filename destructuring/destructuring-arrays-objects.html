@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Destructuring Arrays and Objects together</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const companies = [
+        { name: 'Google', location: 'Mountain View' },
+        { name: 'Facebook', location: 'Menlo Park' },
+        { name: 'Uber', location: 'San Francisco' }
+      ];
+
+      const [ location ] = companies; // accessing first element of the array 'companies'
+
+      location; // OUTPUT: { 'name': 'Google', 'location': 'Mountain View' }
+    </script>
+  </body>
+</html>
