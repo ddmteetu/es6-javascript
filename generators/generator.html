@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Generators</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function* shopping() { // 'Generator' function
+        // stuff on the sidewalk
+
+        // walking down the sidewalk
+
+        // go into the store with cash
+        const stuffFromStore = yield 'cash'; // 'yield' keyword
+
+        // walking back home
+        return stuffFromStore;
+      }
+
+      // stuff in the store
+      const gen = shopping();
+      gen.next(); // OUTPUT: {'value': 'cash', 'done': false} // leaving our house
+      // walked into the store
+      // walking up and down the aisles..
+      // purchase our stuff
+
+      gen.next('groceries'); // OUTPUT: {'value': 'groceries', 'done': true} // leaving the store with 'groceries'
+    </script>
+  </body>
+</html>
