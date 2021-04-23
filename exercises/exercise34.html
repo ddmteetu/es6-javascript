@@ -20,6 +20,11 @@
         	return typeof number === 'undefined' ? result : double(array);
       }
 
+      // another shorter implementation of the 'double' method using 'Rest' operator
+      function double([number, ...rest]) {
+          return !number ? [] : [number * 2, ...double(rest)];
+      }
+
       double(numbers); // OUTPUT: [2, 4, 6]
     </script>
   </body>
