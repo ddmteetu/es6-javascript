@@ -12,9 +12,9 @@
         { name: 'Uber', location: 'San Francisco' }
       ];
 
-      const [ location ] = companies; // accessing first element of the array 'companies'
+      const [ { location } ] = companies; // accessing first element's property 'location' from the array 'companies'
 
-      location; // OUTPUT: { 'name': 'Google', 'location': 'Mountain View' }
+      location; // OUTPUT: Mountain View
     </script>
   </body>
 </html>
