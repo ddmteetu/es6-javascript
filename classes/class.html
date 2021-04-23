@@ -6,33 +6,20 @@
   </head>
   <body>
     <script type="text/javascript">
-      // a 'constructor' function
-      function Car(options) {
-        this.title = options.title;
+      // creating a 'class'
+      class Car {
+        constructor({ title }) { // 'constructor' function to do the initialization, everytime a new instance is created using 'new'
+          this.title = title;
+        }
+        drive() { // creating method of the 'class' using 'enhanced object literals' (without using the 'function' keyword & the ':')
+          return 'vroom';
+        }
       }
 
-      // creating a method 'drive' on 'Car' constructor
-      Car.prototype.drive = function() {
-        return 'vroom';
-      }
+      const car = new Car({ title: 'Toyota' }); // creating an 'instance' of the 'Car' class
 
-      function Toyota(options) {
-        Car.call(this, options); // setting a call to 'Car' object from the current object to return an object that has properties similar to 'Car' as well
-        this.color = options.color;
-      }
-
-      Toyota.prototype = Object.create(Car.prototype); // setting up a 'prototypal inheritance' from 'Car' to 'Toyota'
-      Toyota.prototype.constructor = Toyota;
-
-      Toyota.prototype.honk = function() {
-        return 'beep';
-      }
-
-      const toyota = new Toyota({ color: 'red', title: 'Daily Driver' }); // creating a 'toyota' object
-
-      toyota; // OUTPUT: {'title': 'Daily Driver', 'color': 'red'}
-      toyota.drive(); // OUTPUT: vroom
-      toyota.honk(); // OUTPUT: beep
+      car; // OUTPUT: {'title': 'Toyota'}
+      car.drive(); // OUTPUT: vroom
     </script>
   </body>
 </html>
