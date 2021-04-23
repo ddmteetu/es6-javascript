@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Classes</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // a 'constructor' function
+      function Car(options) {
+        this.title = options.title;
+      }
+
+      // creating a method 'drive' on 'Car' constructor
+      Car.prototype.drive = function() {
+        return 'vroom';
+      }
+
+      const car = new Car({ title: 'Focus' }); // creating a 'car' object
+
+      car; // OUTPUT: {'title': 'Focus'}
+      car.drive(); // OUTPUT: vroom
+    </script>
+  </body>
+</html>
