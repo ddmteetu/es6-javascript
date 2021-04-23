@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 34</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const numbers = [1, 2, 3];
+      const result = [];
+
+      function double(array) {
+          const [number, ...rest] = array;
+
+          if (typeof number !== 'undefined') {
+              result.push(number * 2);
+            	array.shift();
+          }
+
+        	return typeof number === 'undefined' ? result : double(array);
+      }
+
+      double(numbers); // OUTPUT: [2, 4, 6]
+    </script>
+  </body>
+</html>
