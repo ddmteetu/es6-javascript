@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 36</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class Monster {
+        constructor(options) {
+          this.health = 100;
+          this.name = options.name;
+        }
+      }
+
+      class Snake extends Monster {
+          bite(snake) {
+              snake.health -= 10;
+          }
+      }
+
+      const cobra = new Snake({ name: 'Cobra' });
+      const python = new Snake({ name: 'Python' });
+
+      cobra; // OUTPUT: {'health': 100, 'name': 'Cobra'}
+      cobra.bite(python); // reduces Python's health by -10
+      '----';
+      python; // OUTPUT: {'health': 90, 'name': 'Python'}
+      python.bite(cobra); // reduces Cobra's health by -10
+
+      '----';
+      cobra; // OUTPUT: {'health': 90, 'name': 'Cobra'}
+      python; // OUTPUT: {'health': 90, 'name': 'Python'}
+    </script>
+  </body>
+</html>
