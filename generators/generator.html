@@ -13,9 +13,11 @@
 
         // go into the store with cash
         const stuffFromStore = yield 'cash'; // 'yield' keyword
+        // walking to laundry place
+        const cleanClothes = yield 'laundry';
 
         // walking back home
-        return stuffFromStore;
+        return [stuffFromStore, cleanClothes];
       }
 
       // stuff in the store
@@ -25,7 +27,8 @@
       // walking up and down the aisles..
       // purchase our stuff
 
-      gen.next('groceries'); // OUTPUT: {'value': 'groceries', 'done': true} // leaving the store with 'groceries'
+      gen.next('groceries'); // OUTPUT: {'value': 'laundry', 'done': false} // leaving the store with 'groceries'
+      gen.next('clean clothes'); // OUTPUT {'value': ['groceries', 'clean clothes'], 'done': true}
     </script>
   </body>
 </html>
