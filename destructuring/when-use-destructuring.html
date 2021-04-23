@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>When to use Destructuring</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // function signup(username, password) { // 'Signup' method to add a new user to the system
+      //   // create new user
+      // }
+
+      // signup('myname', 'mypassword'); // call to 'signup' with 'username' and 'password' to create the user
+
+      // at later point in time, method changed to accept few more arguments
+      // function signup(username, password, email, dateOfBirth, city) { // 'Signup' method to add a new user to the system
+      //   // create new user
+      // }
+
+       // the 'order' of arguments has to be remembered while calling the 'signup' method
+       // in order to create the user correctly, otherwise 'user' will be created incorrectly
+      // signup('myname', 'mypassword', 'myemail@example.com', '1/1/1990', 'New York');
+
+      // to overcome this 'arguments order' remembering problem, Destructuring can be used
+      // create a 'user' object with all the properties that are required as arguments to the method call
+      const user = {
+        username: 'myname',
+        password: 'mypassword',
+        email: 'myemail@example.com',
+        dateOfBirth: '1/1/1990',
+        city: 'New York'
+      };
+
+      // update the 'signup' method's signature to utilise object's 'property destructuring'
+      // order of the arguments does not matter in destructuring, only the property names must match the object's properties
+      function signup({ email, username, dateOfBirth, city, password }) { // 'Signup' method to add a new user to the system
+        // create new user
+      }
+
+      signup(user); // call method with 'user' object to create the user
+    </script>
+  </body>
+</html>
