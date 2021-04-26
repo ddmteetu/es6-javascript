@@ -6,12 +6,14 @@
   </head>
   <body>
     <script type="text/javascript">
-      url = "https://jsonplaceholder.typicode.com/posts/";
+       // if the request is made to the server and the resource is not found on the server,
+       // the 'catch' block of the 'fetch' doesn't render which is a case opposite to other 'ajax' 3rd parth libraries like 'jQuery', 'Axios' etc.
+      url = "https://jsonplaceholder.typicode.com/posts12345/";
 
       // using 'fetch' to make an 'ajax' request to some 'url', that then returns a 'Promise'
       fetch(url)
-        .then(response => response.json()) // to get the result/response as 'json'
-        .then(data => console.log(data));
+        .then(response => console.log(response))
+        .catch(error => console.log('BAD', error)); // this 'cathc' block doesn't render
     </script>
   </body>
 </html>
