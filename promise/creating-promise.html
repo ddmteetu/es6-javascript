@@ -12,6 +12,11 @@
       promise = new Promise((resolve, reject) => {
         resolve();
       });
+
+      // registering a 'callback' with 'then' that get called only if the 'Promise' is finished with 'resolved' state
+      promise
+        .then(() => console.log('finally finished!'))
+        .then(() => console.log('i was also ran!!'));
     </script>
   </body>
 </html>
