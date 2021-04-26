@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Practical use of Generators</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // using [Symbol.iterator] to create the 'generator' function inside of the object itself
+      const testingTeam = {
+        lead: 'Amanda',
+        tester: 'Bill',
+        [Symbol.iterator]: function* () { // key [Symbol.iterator] is 'key interpolation' to use dynamic values as keys
+          yield this.lead;
+          yield this.tester;
+        }
+      };
+
+      const engineeringTeam = {
+        testingTeam,
+        size: 3,
+        department: 'Engineering',
+        lead: 'Jill',
+        manager: 'Alex',
+        engineer: 'Dave',
+        [Symbol.iterator]: function* () { // generator function to loop through some particular keys of the object
+          yield this.lead;
+          yield this.manager;
+          yield this.engineer;
+          yield* this.testingTeam; // generator delegation to yield statements from another object
+        }
+      };
+
+      const names = [];
+
+      // the 'for-of' loop looks to find a [Symbol.iterator] property with in the object to iterate through
+      // [Symbol.iterator] is a special object that tells 'for-of' loop, how to loop through the object
+      for (let name of engineeringTeam) {
+        names.push(name);
+      }
+
+      names; // OUTPUT: ['Jill', 'Alex', 'Dave', 'Amanda', 'Bill']
+    </script>
+  </body>
+</html>
