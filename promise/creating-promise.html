@@ -10,7 +10,16 @@
       // 'resolve' and 'reject' are default parameters to the 'Promise' constructor
       // 'Promise' can be created in 'resolved' or 'rejected' states, by calling 'resolve()' or 'reject()' method
       promise = new Promise((resolve, reject) => {
-        reject();
+        setTimeout(() => { // a simulation to a long running process that runs for '3 seconds' and then 'resolves' or 'rejects'
+          resolve();
+        }, 3000);
+
+        // below is how an 'Async' request is made
+        var request = new XHTMLRequest();
+        // make request
+        request.onload = () => {
+          resolve();
+        };
       });
 
       // registering a 'callback' with 'then' that get called only if the 'Promise' is finished with 'resolved' state
