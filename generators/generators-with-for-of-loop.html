@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Generators with For-of Loop</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function* colors() {
+        yield 'red'; // yield statement
+        yield 'blue';
+        yield 'green';
+      }
+
+      const gen = colors(); // the generator object
+      gen.next(); // OUTPUT: {'value': 'red', 'done': false}
+      gen.next(); // OUTPUT: {'value': 'blue', 'done': false}
+      gen.next(); // OUTPUT: {'value': 'green', 'done': false}
+      gen.next(); // OUTPUT: {'done': true} // as we're not returning any value out of generator, colors()
+
+      // Using 'for-of' loop with generator
+      const myColors = [];
+      for (let color of colors()) {
+        myColors.push(color);
+      }
+
+      myColors; // OUTPUT: ['red', 'blue', 'green']
+    </script>
+  </body>
+</html>
