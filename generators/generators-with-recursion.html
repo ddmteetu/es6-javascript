@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Generators with Recursion</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Creating a post with some content and children (comments) to it
+      class Comment {
+        constructor(content, children) {
+          this.content = content;
+          this.children = children;
+        }
+
+        *[Symbol.iterator]() { // adding iteration to the class with [Symbol.iterator]
+          yield this.content;
+          for (let child of this.children) {
+            yield* child;
+          }
+        }
+      }
+
+      const children = [
+        new Comment('good comment', []),
+        new Comment('bad comment', []),
+        new Comment('meh', [])
+      ];
+      const tree = new Comment('Great post!', children);
+
+      tree; // OUTPUT: {"content":"Great post!","children":[{"content":"good comment","children":[]},{"content":"bad comment","children":[]},{"content":"meh","children":[]}]}
+
+      const values = [];
+      for (let value of tree) {
+        values.push(value);
+      }
+
+      values; // OUTPUT: ["Great post!","good comment","bad comment","meh"]
+    </script>
+  </body>
+</html>
