@@ -10,13 +10,14 @@
       // 'resolve' and 'reject' are default parameters to the 'Promise' constructor
       // 'Promise' can be created in 'resolved' or 'rejected' states, by calling 'resolve()' or 'reject()' method
       promise = new Promise((resolve, reject) => {
-        resolve();
+        reject();
       });
 
       // registering a 'callback' with 'then' that get called only if the 'Promise' is finished with 'resolved' state
       promise
         .then(() => console.log('finally finished!'))
-        .then(() => console.log('i was also ran!!'));
+        .then(() => console.log('i was also ran!!'))
+        .catch(() => console.log('uh oh!!')); // registering 'callback' with 'catch' that get called only if the 'Promise' state is 'rejected'
     </script>
   </body>
 </html>
