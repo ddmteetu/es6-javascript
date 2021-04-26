@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fetch</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      url = "https://jsonplaceholder.typicode.com/posts/";
+
+      // using 'fetch' to make an 'ajax' request to some 'url', that then returns a 'Promise'
+      fetch(url)
+        .then(response => response.json()) // to get the result/response as 'json'
+        .then(data => console.log(data));
+    </script>
+  </body>
+</html>
