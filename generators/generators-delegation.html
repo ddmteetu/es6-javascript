@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Practical use of Generators</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const testingTeam = {
+        lead: 'Amanda',
+        tester: 'Bill'
+      };
+
+      const engineeringTeam = {
+        testingTeam,
+        size: 3,
+        department: 'Engineering',
+        lead: 'Jill',
+        manager: 'Alex',
+        engineer: 'Dave'
+      };
+
+      // generator function to iterate through the input 'engineeringTeam' object
+      // only through some particular 'keys'
+      function* TeamIterator(team) {
+        yield team.lead;
+        yield team.manager;
+        yield team.engineer;
+        const testingTeamGenerator = TestingTeamIterator(team.testingTeam);
+        yield* testingTeamGenerator; // generator delegation to execute the 'yield statements' of another generator
+      }
+
+      // generator function to iterate through the 'testingTeam' object
+      function* TestingTeamIterator(team) {
+        yield team.lead;
+        yield team.tester;
+      }
+
+      const names = [];
+      for (let name of TeamIterator(engineeringTeam)) {
+        names.push(name);
+      }
+
+      names; // OUTPUT: ['Jill', 'Alex', 'Dave']
+    </script>
+  </body>
+</html>
